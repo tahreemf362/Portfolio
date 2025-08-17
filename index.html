@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body.dark-mode {
+      background: linear-gradient(135deg, #23272f 90%, #2d2f36 100%);
+      color: #f6f6f6;
+    }
+    body.dark-mode .card,
+    body.dark-mode .edu-card,
+    body.dark-mode table {
+      background: #23272f !important;
+      border-color: #23272f !important;
+      color: #f6f6f6 !important;
+      box-shadow: 0 8px 32px rgba(31,41,55,0.18);
+    }
+    body.dark-mode .project-thumb {
+      background: #23272f !important;
+    }
+    body.dark-mode .btn.primary {
+      background: #FFC857;
+      color: #23272f;
+    }
+    body.dark-mode .profile-link {
+      background: #23272f;
+      color: #FFC857;
+      border-color: #FFC857;
+    }
+    body.dark-mode .profile-link:hover {
+      border-color: #f6f6f6;
+    }
+    body.dark-mode .section-title {
+      color: #FFC857;
+    }
+    body.dark-mode .section-sub {
+      color: #f6f6f6;
+      opacity: 0.8;
+    }
+    body.dark-mode footer {
+      background: #23272f;
+      color: #FFC857;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tahreem Fatima – Portfolio</title>
+  <meta name="description" content="Portfolio of Tahreem Fatima – Web Development & Creative Design." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:wght@700;900&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --yellow:#FFC857;
+      --charcoal:#1F2937;
+      --offwhite:#FFFDF7;
+      --muted:#EDEDED;
+      --accent:#2AA198; /* optional tiny accent for tags/icons */
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+  margin:0; color:var(--charcoal); background:linear-gradient(135deg, #FFFDF7 90%, #FFFBEA 100%);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    /* Utility */
+    .container{max-width:1180px; margin-inline:auto; padding:0 20px}
+    .grid{display:grid; gap:24px}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border-radius:14px; border:2px solid transparent; cursor:pointer; text-decoration:none; font-weight:600}
+    .btn.primary{background:var(--yellow); color:#111}
+    .btn.primary:hover{filter:brightness(0.96); box-shadow:var(--shadow)}
+    .btn.ghost{border-color:var(--charcoal); color:var(--charcoal)}
+    .tag{display:inline-block; padding:6px 10px; border-radius:999px; background:#fff; border:1px solid var(--muted); font-size:12px}
+
+    /* Navbar */
+    header{
+      position:sticky; top:0; z-index:50; background:rgba(255,253,247,0.8); backdrop-filter: blur(8px); border-bottom:1px solid var(--muted);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; height:68px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    .brand-mark{width:28px; height:28px; border-radius:7px; background:var(--yellow); display:grid; place-items:center; font-weight:800}
+    nav ul{display:flex; list-style:none; gap:22px; padding:0; margin:0}
+    nav a{color:var(--charcoal); text-decoration:none; font-weight:600}
+    nav a:hover{opacity:.7}
+    .nav-cta{display:flex; align-items:center; gap:10px}
+    .menu-btn{display:none}
+
+    /* Hero */
+    .hero{position:relative; padding:84px 0 64px;}
+    .hero .wrap{display:grid; grid-template-columns: 1.2fr 0.8fr; gap:30px; align-items:center}
+    h1{font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif; font-size:56px; line-height:1.05; margin:0 0 18px}
+    .lead{font-size:18px; opacity:.85; max-width:650px}
+    .hero-actions{display:flex; gap:12px; margin-top:24px; flex-wrap:wrap}
+    /* Corner logo placeholder (you can replace with image) */
+    .corner-logo{position:absolute; right:24px; top:24px; width:88px; height:88px; border-radius:22px; background:conic-gradient(from 120deg at 50% 50%, #FFE39A, var(--yellow)); box-shadow:var(--shadow); display:grid; place-items:center; font-weight:800; font-size:22px; color: #1F2937;}
+    body.dark-mode .corner-logo {
+      background: conic-gradient(from 120deg at 50% 50%, #23272f, #FFC857);
+      color: #000 !important;
+    }
+    .shape{width:100%; height:320px; border-radius:24px; background:radial-gradient(120% 120% at 0% 0%, #fff 0%, #FFF6D9 50%, #FFE39A 100%); box-shadow:var(--shadow)}
+    .hero-meta{display:flex; gap:24px; margin-top:18px; flex-wrap:wrap}
+    .meta-pill{display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--muted); background:#fff; border-radius:999px; font-size:14px}
+
+    /* Section shells */
+    section{padding:84px 0}
+    .section-title{font-size:32px; margin:0 0 8px; font-weight:800}
+    .section-sub{opacity:.75; margin:0 0 28px}
+
+    /* Skills */
+    .skills-grid{grid-template-columns: repeat(auto-fit, minmax(220px,1fr))}
+    .card{
+    background: #FFC857;
+    border: 1px solid #FFC857;
+      border-radius: var(--radius);
+      padding: 24px 20px 20px 20px;
+      box-shadow: 0 8px 32px rgba(255,200,87,0.13), var(--shadow);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 16px 40px rgba(255,200,87,0.18), var(--shadow);
+    }
+    .card h3{margin:8px 0 6px}
+    .skill-list{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+
+    /* Experience */
+    .timeline{position:relative; border-left:3px solid var(--yellow); padding-left:22px}
+    .tl-item{margin-bottom:26px}
+    .tl-item h4{margin:0}
+    .tl-date{font-size:13px; opacity:.7}
+
+    /* Projects */
+    .projects-grid{grid-template-columns: repeat(auto-fit, minmax(260px,1fr))}
+    .project-card{overflow:hidden; padding:0}
+    .project-thumb{
+      aspect-ratio: 16/10;
+      background: #fffbe6;
+      border-bottom: 1px solid var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      padding: 12px;
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 4px 18px rgba(255,200,87,0.10);
+      overflow: hidden;
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(31,41,55,0.08);
+      border: 2px solid #FFE39A;
+      background: #fff;
+      transition: transform 0.18s;
+    }
+    .project-thumb img:hover {
+      transform: scale(1.04);
+    }
+    .project-body{padding:18px}
+    .project-links{display:flex; gap:10px; margin-top:10px}
+
+    /* Profiles */
+    .profiles{display:flex; flex-wrap:wrap; gap:14px}
+    .profile-link{background:#fff; border:1px solid var(--muted); border-radius:999px; padding:12px 16px; text-decoration:none; color:var(--charcoal); font-weight:600}
+    .profile-link:hover{border-color:var(--charcoal)}
+
+    /* Contact */
+    form{display:grid; gap:12px; max-width:620px}
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--muted); outline:none; background:#fff}
+    textarea{min-height:140px; resize:vertical}
+
+    /* Footer */
+    footer{
+      padding: 32px 0;
+      border-top: 1px solid var(--muted);
+      text-align: center;
+      font-size: 15px;
+      background: linear-gradient(90deg, #FFF6D9 80%, #FFE39A 100%);
+      border-radius: 0 0 24px 24px;
+      box-shadow: 0 -4px 24px rgba(255,200,87,0.10);
+      margin-top: 48px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero .wrap{grid-template-columns: 1fr}
+      .corner-logo{right:16px; top:16px; width:72px; height:72px}
+      h1{font-size:44px}
+      .menu-btn{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--muted); background:#fff; padding:8px 12px; border-radius:12px}
+      nav ul{display:none; position:absolute; right:20px; top:64px; background:#fff; padding:12px; border-radius:12px; border:1px solid var(--muted); box-shadow:var(--shadow);}
+      nav ul.open{display:flex; flex-direction:column; gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated SVG Background -->
+  <div style="position:fixed; inset:0; z-index:-1; pointer-events:none;">
+    <svg width="100vw" height="100vh" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100vw; height:100vh;">
+      <defs>
+        <linearGradient id="bgGrad" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFFDF7"/>
+          <stop offset="1" stop-color="#FFF6D9"/>
+        </linearGradient>
+        <radialGradient id="circleGrad" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#FFC857" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#FFFDF7" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- Stars -->
+      <g opacity="0.28">
+        <polygon points="60,120 68,136 84,138 72,148 76,164 60,156 44,164 48,148 36,138 52,136" fill="#FFC857">
+          <animate attributeName="opacity" values="0.28;0.12;0.28" dur="6s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="400,300 406,312 420,314 410,322 414,336 400,328 386,336 390,322 380,314 394,312" fill="#FFC857">
+          <animate attributeName="opacity" values="0.28;0.10;0.28" dur="8s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="1300,200 1306,212 1320,214 1310,222 1314,236 1300,228 1286,236 1290,222 1280,214 1294,212" fill="#FFC857">
+          <animate attributeName="opacity" values="0.28;0.09;0.28" dur="7s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="900,700 906,712 920,714 910,722 914,736 900,728 886,736 890,722 880,714 894,712" fill="#FFC857">
+          <animate attributeName="opacity" values="0.28;0.15;0.28" dur="9s" repeatCount="indefinite"/>
+        </polygon>
+      </g>
+      <rect width="1440" height="900" fill="url(#bgGrad)"/>
+      <circle id="animCircle" cx="1200" cy="180" r="120" fill="url(#circleGrad)">
+        <animate attributeName="cx" values="1200;200;1200" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="180;700;180" dur="12s" repeatCount="indefinite"/>
+      </circle>
+      <circle id="animCircle2" cx="300" cy="700" r="90" fill="url(#circleGrad)">
+        <animate attributeName="cy" values="700;200;700" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="300;900;300" dur="10s" repeatCount="indefinite"/>
+      </circle>
+      <ellipse cx="900" cy="600" rx="180" ry="60" fill="#FFF6D9" opacity="0.5">
+        <animate attributeName="rx" values="180;100;180" dur="8s" repeatCount="indefinite"/>
+      </ellipse>
+    </svg>
+  </div>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">TF</div>
+        <span>Tahreem&nbsp;Fatima</span>
+      </div>
+      <nav>
+        <button class="menu-btn" aria-label="Toggle Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰ Menu</button>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#profiles">Profiles</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+  <a class="btn ghost" href="#contact">Say Hi</a>
+  <a class="btn primary" href="https://drive.google.com/file/d/1obLOzno9-6qPluG0q9OyVsGdd13ueAVa/view?usp=drivesdk" target="_blank" rel="noopener">Preview CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="corner-logo" title="Replace with your logo image if you want">TF</div>
+    <div class="container wrap">
+      <div>
+  <h1 style="font-family: 'Pacifico', 'Playfair Display', 'Plus Jakarta Sans', cursive; font-size:62px; font-weight:900; color: #FFC857; letter-spacing:1px;">Hey there, I’m Tahreem</h1>
+        <p class="lead">I design and build clean, responsive web experiences.  BS Software Engineering student at PMAS Arid University — mixing <b>code</b> and <b>creativity</b>.</p>
+        <div class="hero-meta">
+          <span class="meta-pill">📧 <a href="mailto:tahreemf362@gmail.com" style="text-decoration:none;color:inherit">tahreemf362@gmail.com</a></span>
+          <span class="meta-pill">🎓 Student • BSSE</span>
+          <span class="meta-pill">📍 PK (Remote)</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">See My Work</a>
+          <a class="btn ghost" href="#skills">Explore Skills</a>
+        </div>
+      </div>
+      <div>
+          <div class="shape" aria-hidden="false" style="display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #333; text-align: center; padding: 24px;">
+            <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <div style="background: #FFC857; border-radius: 18px; box-shadow: 0 8px 32px rgba(255,200,87,0.18); padding: 38px 28px; width: 90%; max-width: 440px; margin: auto; position: relative;">
+                <span style="font-size: 1.35rem; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; letter-spacing: 1px; display: block;">“The best way to predict the future is to create it.”</span>
+                <span style="position: absolute; top: -18px; left: 18px; font-size: 2.2rem; color: #111; opacity: 0.7;">❝</span>
+                <span style="position: absolute; bottom: -18px; right: 18px; font-size: 2.2rem; color: #111; opacity: 0.7;">❞</span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <!-- Identity Slider -->
+  <h2 id="whoiam-heading" class="section-title" style="margin-top:48px;margin-bottom:8px;text-align:center;color:#FFC857;font-weight:900;letter-spacing:2px;">
+    <span id="whoiam-typed"></span>
+  </h2>
+  <div id="identity-slider" style="max-width:700px;margin:48px auto 0 auto;position:relative;">
+  <div class="slider-frame" style="background:#FFC857;color:#1F2937;border-radius:22px;box-shadow:0 8px 32px rgba(255,200,87,0.18);overflow:hidden;position:relative;">
+  <button id="slider-left" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(31,41,55,0.13);border:none;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:2rem;color:#1F2937;z-index:2;">&#8592;</button>
+  <button id="slider-right" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(31,41,55,0.13);border:none;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:2rem;color:#1F2937;z-index:2;">&#8594;</button>
+      <div class="slider-content" style="display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:360px;transition:all 0.5s;">
+        <img id="slider-img" src="images/slider1.jpg" alt="Slider 1" style="width:100%;max-width:440px;border-radius:18px;margin-bottom:22px;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+        <div id="slider-text" style="font-size:1.7rem;font-weight:700;text-align:center;">I am a passionate Software Engineering student.</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Typing animation for Who I Am
+    const whoIAmText = 'Who I Am?';
+    let whoIAmIdx = 0;
+    function typeWhoIAm() {
+      if (whoIAmIdx <= whoIAmText.length) {
+        document.getElementById('whoiam-typed').textContent = whoIAmText.slice(0, whoIAmIdx);
+        whoIAmIdx++;
+        setTimeout(typeWhoIAm, 120);
+      }
+    }
+    typeWhoIAm();
+    // Slider data
+    const sliderData = [
+      {img:'images/slider1.jpg', text:'I am a passionate Software Engineering student.'},
+      {img:'images/slider2.jpg', text:'I love building creative web experiences.'},
+      {img:'images/slider3.jpg', text:'I design posters and brand assets on Canva.'},
+      {img:'images/slider4.jpg', text:'I collaborate and work in teams for projects.'},
+      {img:'images/slider5.jpg', text:'I am always learning and open for remote work.'}
+    ];
+    let sliderIndex = 0;
+    function showSlider(idx) {
+      document.getElementById('slider-img').src = sliderData[idx].img;
+      document.getElementById('slider-img').alt = 'Slider ' + (idx+1);
+      document.getElementById('slider-text').textContent = sliderData[idx].text;
+    }
+    let sliderInterval = setInterval(function(){
+      sliderIndex = (sliderIndex+1)%sliderData.length;
+      showSlider(sliderIndex);
+    }, 3000);
+
+    document.getElementById('slider-left').onclick = function() {
+      sliderIndex = (sliderIndex-1+sliderData.length)%sliderData.length;
+      showSlider(sliderIndex);
+      resetSliderInterval();
+    };
+    document.getElementById('slider-right').onclick = function() {
+      sliderIndex = (sliderIndex+1)%sliderData.length;
+      showSlider(sliderIndex);
+      resetSliderInterval();
+    };
+    function resetSliderInterval() {
+      clearInterval(sliderInterval);
+      sliderInterval = setInterval(function(){
+        sliderIndex = (sliderIndex+1)%sliderData.length;
+        showSlider(sliderIndex);
+      }, 3000);
+    }
+  </script>
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">What do I help with?</h2>
+      <p class="section-sub">Development + Design — yahan tumhari core skills categories dikh rahi hain.</p>
+
+      <div class="grid skills-grid">
+        <div class="card">
+          <span class="tag">Web Development</span>
+          <h3>Frontend</h3>
+          <p>Clean, responsive UIs and components.</p>
+          <div class="skill-list">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag">Web Development</span>
+          <h3>Backend Basics</h3>
+          <p>Simple APIs & sessions for small apps.</p>
+          <div class="skill-list">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag">Canva</span>
+          <h3>Canva Design</h3>
+          <p>Professional social media posts, brand assets, and creative visuals.</p>
+          <div class="skill-list">
+            <span class="tag">Canva</span>
+            <span class="tag">Brand Assets</span>
+            <span class="tag">Social Media</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag">React</span>
+          <h3>React Components</h3>
+          <p>Reusable UI components and interactive web apps.</p>
+          <div class="skill-list">
+            <span class="tag">React</span>
+            <span class="tag">JSX</span>
+            <span class="tag">Hooks</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag">Poster</span>
+          <h3>Poster Design</h3>
+          <p>Creative posters for events, campaigns, and branding.</p>
+          <div class="skill-list">
+            <span class="tag">Poster Maker</span>
+            <span class="tag">Event Design</span>
+            <span class="tag">Behance</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag">Cards</span>
+          <h3>Card Layouts</h3>
+          <p>Modern, stylish card layouts for web and mobile interfaces.</p>
+          <div class="skill-list">
+            <span class="tag">UI Cards</span>
+            <span class="tag">Responsive</span>
+            <span class="tag">CSS Grid</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience / Education -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Education & Experience</h2>
+      <p class="section-sub">My academic background and professional journey.</p>
+      <div style="display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;">
+        <!-- Education Card -->
+        <div class="card edu-card" style="background: #FFC857; border-radius: 22px; box-shadow: 0 8px 32px rgba(255,200,87,0.13), var(--shadow); min-width: 280px; max-width: 340px; width:100%; padding: 0; margin-bottom: 18px; transition: transform 0.18s, box-shadow 0.18s;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 22px 22px 10px 22px;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#FFD600"/><path d="M10 22v-8l6-4 6 4v8" stroke="#1F2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size: 1.25rem; font-weight: 800; color: #1F2937;">Education</span>
+          </div>
+          <div style="padding: 0 22px 22px 22px;">
+            <div style="margin-bottom: 14px;">
+              <span style="font-weight:700; color:#1F2937;">Software Engineering Student</span><br>
+              <span style="color:#1F2937;">PMAS Arid University</span>
+            </div>
+            <div>
+              <span style="font-weight:700; color:#1F2937;">FSc Pre-Medical</span><br>
+              <span style="color:#1F2937;">APS</span>
+            </div>
+          </div>
+        </div>
+        <!-- Experience Card -->
+        <div class="card edu-card" style="background: #FFC857; border-radius: 22px; box-shadow: 0 8px 32px rgba(255,200,87,0.13), var(--shadow); min-width: 280px; max-width: 340px; width:100%; padding: 0; margin-bottom: 18px; transition: transform 0.18s, box-shadow 0.18s;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 22px 22px 10px 22px;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#FFD600"/><path d="M10 22v-2a2 2 0 012-2h8" stroke="#1F2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size: 1.25rem; font-weight: 800; color: #1F2937;">Experience</span>
+          </div>
+          <div style="padding: 0 22px 22px 22px;">
+            <div style="margin-bottom: 14px;">
+              <span style="font-weight:700; color:#1F2937;">Canva Fellowship</span><br>
+              <span style="color:#1F2937;">Design tasks, brand assets, posters, social creatives</span>
+            </div>
+            <div>
+              <span style="font-weight:700; color:#1F2937;">Projects</span><br>
+              <span style="color:#1F2937;">Web Blogging Platform, Recipe Room, Skill Swap, Poster Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My Latest Works</h2>
+      <p class="section-sub">A mix of web builds and design pieces.</p>
+
+      <div class="grid projects-grid">
+        <!-- Coding Project 1 -->
+        <article class="card project-card">
+          <div class="project-thumb">
+            <img src="project1.jpg" alt="Blogging Website Screenshot" style="width:100%; height:auto; border-radius:12px;">
+          </div>
+          <div class="project-body">
+            <h3>Blogging Website</h3>
+            <p>Bootstrap 5, Node.js (Express), SQLite, Sessions. CRUD posts + privacy.</p>
+            <div class="project-links">
+              <a class="btn primary" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="btn ghost" href="https://github.com/tahreemf362" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coding Project 2 -->
+        <article class="card project-card">
+          
+          <div class="project-thumb">
+            <img src="project2.PNG" alt="React Components Playground Screenshot" style="width:100%; height:auto; border-radius:12px;">
+          </div>
+          <div class="project-body">
+            <h3>Skill Swap </h3>
+            <p>Its a Website that helps the learner to exchange their skills with others </p>
+            <div class="project-links">
+              <a class="btn primary" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="btn ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coding Project 3 -->
+        <article class="card project-card">
+          <div class="project-thumb">
+            <img src="project3.jpg" alt="Weather App Screenshot" style="width:100%; height:auto; border-radius:12px;">
+          </div>
+          <div class="project-body">
+            <h3>The Recipe Room</h3>
+            <p>The Recipe Room helps others to share their recipes. created using API. HTML, CSS, JS.</p>
+            <div class="project-links">
+              <a class="btn primary" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="btn ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Behance Project 1 -->
+        <article class="card project-card">
+          <div class="project-thumb">
+            <img src="cravers arena.png" alt="Logo & Poster Pack Screenshot" style="width:100%; height:auto; border-radius:12px;">
+          </div>
+          <div class="project-body">
+            <h3>Logo </h3>
+            <p>Canva-based brand identity and promotional set.</p>
+            <div class="project-links">
+              <a class="btn primary" href="https://www.behance.net/tahreemfatimaa" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Behance Project 2 -->
+        <article class="card project-card">
+          <div class="project-thumb">
+            <img src="1.png" alt="Social Media Poster" style="width:100%; height:auto; border-radius:12px;">
+          </div>
+          <div class="project-body">
+            <h3>Social Media Poster</h3>
+            <p>Instagram/Facebook post templates for a local business. Canva & Behance.</p>
+            <div class="project-links">
+              <a class="btn primary" href="#" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Behance Project 3 -->
+        <article class="card project-card">
+          <div class="project-thumb">
+            <img src="CLOSET CRUSH.png" alt="Event Poster Series Screenshot" style="width:100%; height:auto; border-radius:12px;">
+          </div>
+          <div class="project-body">
+            <h3>Poster Design</h3>
+            <p>Creative posters for university events. Shared on Behance.</p>
+            <div class="project-links">
+              <a class="btn primary" href="#" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profiles -->
+  <section id="profiles">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 18px; flex-wrap: wrap;">
+        <div style="width: 70px; height: 70px; border-radius: 50%; background: conic-gradient(from 120deg at 50% 50%, #FFE39A, #FFC857, #FFD700, #FFB300); box-shadow: 0 4px 18px rgba(255,200,87,0.18); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 2.2rem; font-weight: 900; color: #1F2937; font-family: 'Playfair Display', serif;">TF</span>
+        </div>
+        <span style="font-size: 1.5rem; font-weight: 800; color: #FFC857; font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; letter-spacing: 1px;">Tahreem Fatima Profile</span>
+      </div>
+      <div class="profiles">
+        <a class="profile-link" href="https://www.linkedin.com/in/tahreem-fatima-250550274/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A66C2"/><path d="M10.667 13.333h2.666v8h-2.666v-8zm1.333-4a1.333 1.333 0 110 2.667 1.333 1.333 0 010-2.667zm3.333 4h2.56v1.093h.037c.357-.677 1.23-1.393 2.533-1.393 2.707 0 3.2 1.787 3.2 4.107v4.193h-2.667v-3.733c0-.893-.016-2.04-1.24-2.04-1.24 0-1.427.968-1.427 1.967v3.806h-2.667v-8z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+        <a class="profile-link" href="https://www.behance.net/tahreemfatimaa" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#1769FF"/><path d="M10.667 13.333h10.666v2.667h-10.666v-2.667zm0 4h10.666v2.667h-10.666v-2.667z" fill="#fff"/></svg>
+          Behance
+        </a>
+        <a class="profile-link" href="mailto:tahreemf362@gmail.com" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#EA4335"/><path d="M8 12.667l8 6.666 8-6.666V24H8V12.667zm16-2.667H8c-.733 0-1.333.6-1.333 1.333v.267l9.333 7.8 9.333-7.8v-.267c0-.733-.6-1.333-1.333-1.333z" fill="#fff"/></svg>
+          Email
+        </a>
+        <a class="profile-link" href="https://github.com/tahreemf362" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#333"/><path d="M16 8c-4.418 0-8 3.582-8 8 0 3.54 2.292 6.532 5.47 7.59.4.074.546-.174.546-.386 0-.19-.007-.693-.01-1.36-2.225.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.727-.497.055-.487.055-.487.803.057 1.226.825 1.226.825.715 1.226 1.874.872 2.33.667.072-.518.28-.872.508-1.073-1.777-.202-3.644-.888-3.644-3.953 0-.873.312-1.588.824-2.148-.083-.203-.357-1.017.078-2.12 0 0 .67-.215 2.2.82a7.66 7.66 0 012.004-.27c.68.003 1.366.092 2.004.27 1.53-1.035 2.2-.82 2.2-.82.435 1.103.161 1.917.08 2.12.513.56.823 1.275.823 2.148 0 3.073-1.87 3.748-3.65 3.947.288.248.544.737.544 1.485 0 1.073-.01 1.938-.01 2.202 0 .214.144.463.55.385C21.71 22.53 24 19.54 24 16c0-4.418-3.582-8-8-8z" fill="#fff"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let’s make something amazing together</h2>
+      <p class="section-sub">Start by saying hi — I usually reply within a day.</p>
+      <div style="display: flex; gap: 18px; flex-wrap: wrap; margin-top: 32px;">
+  <a class="btn primary" style="background: #FFC857; color: #111; font-weight: 700; font-size: 1.1rem; min-width: 220px; text-align: center;" href="https://www.linkedin.com/in/tahreem-fatima-250550274/" target="_blank" rel="noopener">Contact on LinkedIn</a>
+  <a class="btn primary" style="background: #FFC857; color: #111; font-weight: 700; font-size: 1.1rem; min-width: 220px; text-align: center;" href="mailto:tahreemf362@gmail.com" target="_blank" rel="noopener">Contact on Email</a>
+  <a class="btn primary" style="background: #FFC857; color: #111; font-weight: 700; font-size: 1.1rem; min-width: 220px; text-align: center;" href="https://www.behance.net/tahreemfatimaa" target="_blank" rel="noopener">Contact on Behance</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <span style="font-size: 1.3rem; font-weight: 700; color: #FFC857; letter-spacing: 1px;">© <span id="yr"></span> Tahreem Fatima</span>
+      <span style="font-size: 1.1rem; color: #1F2937;">· All rights reserved</span>
+  <span style="font-size: 1.3rem; color: #FFC857;">★</span>
+  <a href="https://www.linkedin.com/in/tahreem-fatima-250550274/" target="_blank" rel="noopener" style="color:#2AA198; text-decoration:none; font-size:1.2rem;">LinkedIn</a>
+  <a href="https://www.behance.net/tahreemfatimaa" target="_blank" rel="noopener" style="color:#2AA198; text-decoration:none; font-size:1.2rem;">Behance</a>
+  <a href="mailto:tahreemf362@gmail.com" style="color:#2AA198; text-decoration:none; font-size:1.2rem;">Email</a>
+  <a href="https://github.com/tahreemf362" target="_blank" rel="noopener" style="color:#2AA198; text-decoration:none; font-size:1.2rem;">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    // small helpers
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
